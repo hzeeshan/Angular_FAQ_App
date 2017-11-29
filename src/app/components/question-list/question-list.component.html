@@ -1,0 +1,10 @@
+<app-add-question (questionAdded)="addQuestions($event)"></app-add-question>
+<hr>
+<div class="card" *ngFor="let question of questions">
+  
+  <div class="card-body">
+    <h4 class="card-title">{{ question.text }}</h4> <a class="btn btn-success" style="color:white" (click)="question.hide=!question.hide">Show</a> | <a style="color:white" class="btn btn-danger" (click)="removeQuestion(question)">Remove</a><hr>
+    <p class="card-text" [hidden]="question.hide"> {{ question.answer }}</p>
+    
+  </div>
+</div>
